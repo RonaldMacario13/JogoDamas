@@ -1,12 +1,37 @@
-while True:
-    print("Jogo de Damas v1.0 \n")
-    print("Menu \n 1.Jogar \n 2.Instruções \n 3.Sair")
-    opcao=(input("Digite o número da opção desejada: "))
-    if opcao == 3:
-        break
-    elif opcao == 1:
-        continue
-    elif opcao == 2:
-        print("Após iniciar a partida, você deve indicar a coluna e a linha da peça que você deseja mover, depois informar a coluna e linha de onde você quer que a peça vá. Para sair do Jogo digite '3' a qualquer momento")
-    else:
-        print("Comando não reconhecido, reveja as opções e tente novamente!")
+import pygame
+from pygame import event
+
+#Configuração de tela/tabuleiro
+largura,altura=720,600
+linhas,colunas=8,8
+tamanhoTabuleiro=largura//colunas
+
+#Declaração das cores
+branco= (255,255,255)
+preto= (0,0,0)
+vermelho= (173,19,31)
+azul=(3,73,122)
+verde=(0,169,130)
+
+fps=30
+
+vitoria= pygame.display.set_mode((largura, altura)) #Aqui é a configuração do display
+pygame.display.set_caption("Jogo de Damas - Programação 1") #Aqui é o nome que vai aparecer na janela que abrir
+
+def loop(): #Função que mantém o programa aberto
+	manterAberto=True
+	limitarFps=pygame.time.Clock()
+	while manterAberto:
+		limitarFps.tick(fps)
+		pass
+
+	for fechar in pygame.event.get():
+		if fechar.type==pygame.QUIT:
+			manterAberto=False
+
+		if fechar.type == pygame.MOUSEBUTTONDOWN:
+			pass
+
+	pygame.QUIT()
+
+loop()
