@@ -13,10 +13,23 @@ vermelho= (173,19,31)
 azul=(3,73,122)
 verde=(0,169,130)
 
-fps=30
+fps=60
 
 vitoria= pygame.display.set_mode((largura, altura)) #Aqui é a configuração do display
 pygame.display.set_caption("Jogo de Damas - Programação 1") #Aqui é o nome que vai aparecer na janela que abrir
+
+class tabuleiro:
+	def __init__(self):
+		self.tabuleiro = []
+		self.pecaSelecionada = None
+		self.vermelhoEsquerda = self.azulEsquerda = 12
+		self.rainhaVermelha = self.rainhaAzul = 0
+
+	def cubosTabuleiro(self,vitoria):
+		win.fill(preto)
+
+
+
 
 def loop(): #Função que mantém o programa aberto
 	manterAberto=True
